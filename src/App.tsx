@@ -1,9 +1,9 @@
-import React, { FormEvent, useEffect, useMemo, useState } from "react";
-import { format } from "date-fns";
+import React, { FormEvent, useMemo, useState } from "react";
+
 import "./App.css";
-import { iterateDaysOfMonth } from "./utils/iterateDaysOfMonth";
+
 import { billFor } from "./utils/billFor";
-import { constantUsers, newPlan, userSignedUp } from "./data";
+import { constantUsers } from "./data";
 import { IUser } from "./interfaces/IUser";
 import { UsersList } from "./components/UsersList";
 
@@ -41,7 +41,7 @@ function App() {
 
             <input
               className="input"
-              onChange={(e) => setMonth(e.currentTarget.value)}
+              onChange={(e) => setMonth(e.target.value)}
               type="month"
               name="month"
               min="2015-01"
@@ -87,7 +87,7 @@ function App() {
 
               <input
                 className="input"
-                onChange={(e) => setDeactivatedOn(e.currentTarget.value)}
+                onChange={(e) => setDeactivatedOn(e.target.value)}
                 type="date"
                 name="deactivatedOn"
                 min="2015-01"
